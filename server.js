@@ -10,7 +10,7 @@ const APP = module.exports = express(),
 
 APP.use(bodyParser.json());
 APP.use(cors());
-
+APP.use(express.static('./public'));
 
 APP.get('api/test', function(req,res) {
   res.send('App is connected')
