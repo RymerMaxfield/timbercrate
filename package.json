@@ -1,0 +1,22 @@
+{
+  "name": "timbercrate",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "test",
+    "command:"
+  ],
+  "author": "@dougglez && @goldboat90",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
+    "express": "^4.15.3",
+    "express-session": "^1.15.4",
+    "massive": "^3.0.0"
+  }
+}
