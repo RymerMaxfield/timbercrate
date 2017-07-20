@@ -1,2 +1,2 @@
 SELECT * FROM products
-ORDER BY id;
+WHERE id = $1;

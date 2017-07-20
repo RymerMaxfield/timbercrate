@@ -6,10 +6,11 @@ const express = require('express'),
 const CONFIG = require('./config');
 
 const APP = module.exports = express(),
-      PORT = 3000;
+      PORT = 3000,
+      productCtrl = require('./serverProductCtrl');
 
 APP.use(bodyParser.json());
-APP.use(cors());
+APP.use(cors(CONFIG.CORSOPTIONS));
 APP.use(express.static('./public'));
 
 APP.get('api/test', function(req,res) {
@@ -27,21 +28,34 @@ massive({
   ssl:CONFIG.DB.SSL
 }).then(db => {
     APP.set('db', db);
-    console.log('connected to db');
     db.init.create_products_table()
       .then(nothing => {
-        db.get_products()
-          .then(products => console.log(products))
-          .catch(productErr => console.log(productErr))
+        console.log('Products Table created')
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
 
+// ENDPOINTS
 
-  APP.get('/api/products', function(req, res) {
-    db.get_products()
-      .then(products => res.status(200).send(products))
-      .catch(error => res.status(500).send(error))
-  });
+  // get all products
+  APP.get( '/api/products', productCtrl.getAllProducts );
+
+  // add a new product
+  APP.post( '/api/products/new', productCtrl.addProduct );
+
+  // update product (by product id)
+  APP.put( '/api/products/update/all/:id', productCtrl.updateAll );
+
+  // update product category (by product id)
+  APP.put( '/api/products/update/cat/:id', productCtrl.updateCat );
+
+  // update product image (by product id)
+  APP.put( '/api/products/update/image/:id', productCtrl.updateImage );
+
+  // delete product by id
+  APP.delete( '/api/products/delete/:id', productCtrl.destroyProduct );
+
+  // get one product by id
+  APP.get( '/api/products/:id', productCtrl.getProductById );
 
 });
 
