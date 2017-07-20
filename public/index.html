@@ -3,10 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
+  <link rel="stylesheet" href="./styles2/styles.css">
 </head>
-<body>
+<body ng-controller="mainCtrl">
 
-This is my index file.
+<p>Here's the Home page</p>
 
+<p>one day you'll see more stuff here 😁 </p>
+
+<p>But for now, check out these cool pics that are coming back from the db</p>
+<div id="products">
+  <div ng-repeat="prod in products">
+    <img ng-src="{{prod.image_url}}" alt="Product pic">
+    <p>{{prod.category}}</p>
+  </div>
+</div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
+  <script src="./app.js"></script>
+  <script src="./js/controllers/mainCtrl.js"></script>
+  <script src="./js/services/mainService.js"></script>
 </body>
 </html>

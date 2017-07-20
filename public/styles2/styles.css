@@ -3,4 +3,10 @@
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
+  margin: auto;
+  width: 85%;
+}
+
+#products div {
+  margin: 15px 10px;
 }
