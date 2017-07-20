@@ -30,12 +30,14 @@ massive({
     APP.set('db', db);
     db.init.create_products_table()
       .then(nothing => {
+        db.run("SELECT * FROM products")
+          .then(response => console.log(response))
+          .catch(err => console.log(err));
         console.log('Products Table created')
       })
       .catch(err => console.log(err));
 
 // ENDPOINTS
-
   // get all products
   APP.get( '/api/products', productCtrl.getAllProducts );
 
