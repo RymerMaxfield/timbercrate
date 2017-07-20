@@ -27,7 +27,7 @@ module.exports = {
     let image = req.body.image,
         cat = req.body.category;
     db.add_product( [ image, cat ] )
-      .then( response => res.status( 200 ).send( response[ 0 ] ) )
+      .then( response => res.status( 201 ).send( response[ 0 ] ) )
       .catch( err => res.status( 500 ).send( err ) )
   }, // end addProduct
 
