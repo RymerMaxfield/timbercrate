@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "newman run postman_test/timberCrate.postman_collection.json"
   },
   "keywords": [
     "test",
@@ -22,6 +22,7 @@
     "gulp-order": "^1.1.1",
     "gulp-plumber": "^1.1.0",
     "gulp-sass": "^3.1.0",
-    "massive": "^3.0.0"
+    "massive": "^3.0.0",
+    "nodemailer": "^4.0.1"
   }
 }
