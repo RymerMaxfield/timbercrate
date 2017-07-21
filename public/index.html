@@ -2,29 +2,23 @@
 <html lang="en" ng-app="timbercrate">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
-  <link rel="stylesheet" href="./styles2/styles.css">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700|Roboto:400,500,700|Roboto+Condensed:400,700|Anton|Roboto:300, 700" rel="stylesheet">
+  <link rel="stylesheet" href="dist/all.css">
+  <title>Timber Crate</title>
 </head>
-<body ng-controller="mainCtrl">
+<body>
 
-<p>Here's the Home page</p>
-
-<p>one day you'll see more stuff here 😁 </p>
-
-<p>But for now, check out these cool pics that are coming back from the db</p>
-<div id="products">
-  <div ng-repeat="prod in products">
-    <img ng-src="{{prod.image_url}}" alt="Product pic">
-    <p>{{prod.category}}</p>
-  </div>
-</div>
+  <ui-view></ui-view>
 
 
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.js"></script>
-  <script src="./app.js"></script>
-  <script src="./js/controllers/mainCtrl.js"></script>
-  <script src="./js/services/mainService.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+  <script src="./dist/all.js"></script>
 </body>
 </html>

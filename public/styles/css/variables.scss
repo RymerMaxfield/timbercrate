@@ -1,0 +1,248 @@
+/*----------------------------------------------------*/
+/*-------------------  Variables  --------------------*/
+/*----------------------------------------------------*/
+
+$bodyFont: 'Montserrat', sans-serif;
+$headerFont: 'Roboto', sans-serif;
+
+// Color Variables
+
+$bodyColor: #170e2b;
+$black: #000;
+$blue: #128b97;
+$purple: #ac5b90;
+$purpleLight: #9c4d81;
+$purpleFaded: #785e6f;
+$gray: #5b5b5b;
+$darkGreen: #246f01;
+$green: #02a952;
+$lightGreen: #5cc300;
+$neonGreen: #00ff7a;
+$orange: #ff8a00;
+$yellow: #ffea00;
+$white: #fff;
+
+/*---------------------------------------------------*/
+/*---------------------  Mixins  --------------------*/
+/*---------------------------------------------------*/
+
+@mixin hexToRgba($color, $opacity) {
+    background: $color;
+    /* Fallback */
+    background: rgba($color, $opacity);
+}
+
+@mixin image($folderAndName, $size, $pos, $height, $width) {
+    background: url(../styles/images/#{$folderAndName}) no-repeat;
+    background-size: $size;
+    background-position: $pos;
+    height: $height;
+    width: $width;
+}
+
+@mixin textProps($size, $family, $weight, $color) {
+    font-size: $size;
+    font-family: $family;
+    font-weight: $weight;
+    color: $color;
+}
+
+
+/*----------------------------------------------------*/
+/*----------------  Broad classes  -------------------*/
+/*----------------------------------------------------*/
+
+body {
+    font-family: $bodyFont;
+    font-size: 13px;
+}
+
+.basis-auto {
+    flex-basis: auto;
+}
+
+.body-font {
+    font-family: $bodyFont;
+}
+
+.body-color {
+    color: $bodyColor;
+}
+
+.black-underlay {
+    background-color: rgba(0, 0, 0, .7);
+}
+
+h1 {
+    @include textProps(35px, $headerFont, normal, null);
+    margin-bottom: 0;
+}
+
+.h1 {
+    @include textProps(35px, $headerFont, normal, null);
+    margin-bottom: 0;
+}
+
+h2 {
+    @include textProps(32px, $headerFont, normal, null);
+    margin-bottom: 0;
+}
+
+.h2 {
+    @include textProps(32px, $headerFont, normal, null);
+    margin-bottom: 0;
+}
+
+h3 {
+    @include textProps(29px, $headerFont, normal, null);
+    margin-bottom: 0;
+}
+
+.h3 {
+    @include textProps(29px, $headerFont, normal, null);
+    margin-bottom: 0;
+}
+
+h4 {
+    @include textProps(26px, $headerFont, normal, null);
+    margin-bottom: 0;
+}
+
+.h4 {
+    @include textProps(26px, $headerFont, normal, null);
+    margin-bottom: 0;
+}
+
+h5 {
+    @include textProps(23px, $headerFont, normal, null);    
+    margin-bottom: 0;
+}
+
+.h5 {
+    @include textProps(23px, $headerFont, normal, null);    
+    margin-bottom: 0;
+}
+
+h6 {
+    @include textProps(20px, $headerFont, normal, null);    
+    margin-bottom: 0;
+}
+
+.h6 {
+    @include textProps(20px, $headerFont, normal, null);        
+    margin-bottom: 0;
+}
+
+.header-font {
+    font-family: $headerFont;
+}
+
+.img-fluid {
+    flex-shrink: 0;
+}
+
+.max-width {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.orange {
+    color: $orange !important;
+}
+
+.red-bg {
+    background-color: #e4332f;
+}
+
+.white {
+    color: #fff !important;
+}
+
+.yellow {
+    color: $yellow;
+}
+
+.pos-relative {
+    position: relative;
+}
+
+
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {
+
+    .basis-auto {
+        flex-basis: 0;
+    }
+
+    body {
+        font-family: $bodyFont;
+        font-size: 15px;
+    }
+
+    h1 {
+    @include textProps(70px, $headerFont, normal, null);
+    margin-bottom: 0;
+    }
+
+    .h1 {
+        @include textProps(70px, $headerFont, normal, null);
+        margin-bottom: 0;
+    }
+
+    h2 {
+        @include textProps(60px, $headerFont, normal, null);
+        margin-bottom: 0;
+    }
+
+    .h2 {
+        @include textProps(60px, $headerFont, normal, null);
+        margin-bottom: 0;
+    }
+
+    h3 {
+        @include textProps(45px, $headerFont, normal, null);
+        margin-bottom: 0;
+    }
+
+    .h3 {
+        @include textProps(45px, $headerFont, normal, null);
+        margin-bottom: 0;
+    }
+
+    h4 {
+        @include textProps(35px, $headerFont, normal, null);
+        margin-bottom: 0;
+    }
+
+    .h4 {
+        @include textProps(35px, $headerFont, normal, null);
+        margin-bottom: 0;
+    }
+
+    h5 {
+        @include textProps(32px, $headerFont, normal, null);    
+        margin-bottom: 0;
+    }
+
+    .h5 {
+        @include textProps(32px, $headerFont, normal, null);    
+        margin-bottom: 0;
+    }
+
+    h6 {
+        @include textProps(25px, $headerFont, normal, null);    
+        margin-bottom: 0;
+    }
+
+    .h6 {
+        @include textProps(25px, $headerFont, normal, null);        
+        margin-bottom: 0;
+    }
+
+}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
