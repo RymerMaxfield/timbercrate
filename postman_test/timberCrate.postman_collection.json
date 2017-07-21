@@ -8,7 +8,7 @@
 	},
 	"item": [
 		{
-			"name": " localhost:3000/api/products",
+			"name": "GET ALL PRODUCTS",
 			"event": [
 				{
 					"listen": "test",
@@ -34,7 +34,7 @@
 			"response": []
 		},
 		{
-			"name": " localhost:3000/api/products/2",
+			"name": "GET PRODUCT BY ID",
 			"event": [
 				{
 					"listen": "test",
@@ -51,7 +51,7 @@
 				}
 			],
 			"request": {
-				"url": " localhost:3000/api/products/2",
+				"url": " localhost:3000/api/products/4",
 				"method": "GET",
 				"header": [],
 				"body": {},
@@ -60,7 +60,40 @@
 			"response": []
 		},
 		{
-			"name": " localhost:3000/api/products/new",
+			"name": "SEND EMAIL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[`Response time is less than 300ms: (${responseTime}ms)`] = true;",
+							"",
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": " localhost:3000/api/contact",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\" : \"maxfield.douglas@gmail.com\",\n\t\"subject\" : \"Postman\",\n\t\"text\" : \"Testing from postman\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PASS : ADD NEW PRODUCT",
 			"event": [
 				{
 					"listen": "test",
@@ -80,7 +113,33 @@
 				}
 			],
 			"request": {
-				"url": " localhost:3000/api/products/new",
+				"url": {
+					"raw": "localhost:3000/api/admin/new?name=TestName&pass=TestPass",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"admin",
+						"new"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "TestName",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "pass",
+							"value": "TestPass",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -98,7 +157,7 @@
 			"response": []
 		},
 		{
-			"name": " localhost:3000/api/products/update/all/2",
+			"name": "PASS : UPDATE ALL",
 			"event": [
 				{
 					"listen": "test",
@@ -118,7 +177,35 @@
 				}
 			],
 			"request": {
-				"url": " localhost:3000/api/products/update/all/2",
+				"url": {
+					"raw": "localhost:3000/api/admin/update/all/2?name=TestName&pass=TestPass",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"admin",
+						"update",
+						"all",
+						"2"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "TestName",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "pass",
+							"value": "TestPass",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
 				"method": "PUT",
 				"header": [
 					{
@@ -129,14 +216,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"image\": \"This is an image from update all\",\n\t\"category\": \"updateAll\"\n}"
+					"raw": "{\n\t\"image_url\": \"This is an image from update all\",\n\t\"category\": \"updateAll\"\n}"
 				},
 				"description": ""
 			},
 			"response": []
 		},
 		{
-			"name": " localhost:3000/api/products/update/cat/3",
+			"name": "PASS : UPDATE CAT",
 			"event": [
 				{
 					"listen": "test",
@@ -156,7 +243,35 @@
 				}
 			],
 			"request": {
-				"url": " localhost:3000/api/products/update/cat/3",
+				"url": {
+					"raw": "localhost:3000/api/admin/update/cat/3?name=TestName&pass=TestPass",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"admin",
+						"update",
+						"cat",
+						"3"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "TestName",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "pass",
+							"value": "TestPass",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
 				"method": "PUT",
 				"header": [
 					{
@@ -174,7 +289,7 @@
 			"response": []
 		},
 		{
-			"name": " localhost:3000/api/products/update/image/4",
+			"name": "PASS : UPDATE IMAGE",
 			"event": [
 				{
 					"listen": "test",
@@ -194,7 +309,35 @@
 				}
 			],
 			"request": {
-				"url": " localhost:3000/api/products/update/image/4",
+				"url": {
+					"raw": "localhost:3000/api/admin/update/img/4?name=TestName&pass=TestPass",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"admin",
+						"update",
+						"img",
+						"4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "TestName",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "pass",
+							"value": "TestPass",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
 				"method": "PUT",
 				"header": [
 					{
@@ -205,14 +348,14 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"image\": \"This is an image from update image\"\n}"
+					"raw": "{\n\t\"image_url\": \"This is an image from update image\"\n}"
 				},
 				"description": ""
 			},
 			"response": []
 		},
 		{
-			"name": " localhost:3000/api/products/delete/4",
+			"name": "PASS : DELETE PRODUCT",
 			"event": [
 				{
 					"listen": "test",
@@ -232,7 +375,34 @@
 				}
 			],
 			"request": {
-				"url": " localhost:3000/api/products/delete/4",
+				"url": {
+					"raw": "localhost:3000/api/admin/delete/4?name=TestName&pass=TestPass",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"admin",
+						"delete",
+						"4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "TestName",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "pass",
+							"value": "TestPass",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
 				"method": "DELETE",
 				"header": [
 					{
@@ -245,6 +415,287 @@
 					"mode": "raw",
 					"raw": "{\n\t\"image\": \"this is a url\",\n\t\"cat\": \"test2\"\n}"
 				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "FAIL : ADD NEW PRODUCT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Response time is less than 200ms\"] = responseTime < 200;",
+							"",
+							"tests[\"Status code is 401\"] = responseCode.code === 401;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": {
+					"raw": "localhost:3000/api/admin/new?name=WrongName&pass=WrongPass",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"admin",
+						"new"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "WrongName",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "pass",
+							"value": "WrongPass",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"image\":\"test image\",\n\t\"category\": \"testPost\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "FAIL : UPDATE ALL",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Response time is less than 200ms\"] = responseTime < 200;",
+							"",
+							"tests[\"Status code is 401\"] = responseCode.code === 401;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": {
+					"raw": "localhost:3000/api/admin/update/all/2?name=WrongName&pass=WrongPass",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"admin",
+						"update",
+						"all",
+						"2"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "WrongName",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "pass",
+							"value": "WrongPass",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"image\": \"This is an image from update all\",\n\t\"category\": \"updateAll\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "FAIL : UPDATE CATEGORY",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Response time is less than 200ms\"] = responseTime < 200;",
+							"",
+							"tests[\"Status code is 401\"] = responseCode.code === 401;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": {
+					"raw": "localhost:3000/api/admin/update/cat/3?name=WrongName&pass=WrongPass",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"admin",
+						"update",
+						"cat",
+						"3"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "WrongName",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "pass",
+							"value": "WrongPass",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"image\": \"This is an image from update all\",\n\t\"category\": \"updateAll\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "FAIL : UPDATE IMAGE",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Response time is less than 200ms\"] = responseTime < 200;",
+							"",
+							"tests[\"Status code is 401\"] = responseCode.code === 401;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": {
+					"raw": "localhost:3000/api/admin/update/img/4?name=WrongName&pass=WrongPass",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"admin",
+						"update",
+						"img",
+						"4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "WrongName",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "pass",
+							"value": "WrongPass",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"image\": \"This is an image from update all\",\n\t\"category\": \"updateAll\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "FAIL : DELETE PRODUCT",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Response time is less than 200ms\"] = responseTime < 200;",
+							"",
+							"tests[\"Status code is 401\"] = responseCode.code === 401;"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": {
+					"raw": "localhost:3000/api/admin/delete/4?name=WrongName&pass=WrongPass",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"admin",
+						"delete",
+						"4"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "WrongName",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "pass",
+							"value": "WrongPass",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {},
 				"description": ""
 			},
 			"response": []

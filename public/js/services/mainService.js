@@ -7,4 +7,13 @@ angular.module('timbercrate')
       .catch(error => console.log(error));
   }
 
+  this.sendMail = function(mail) {
+    console.log('received ', mail);
+    return $http({
+     method: 'POST',
+     url: '/api/contact',
+     data: mail
+    }).then(response => response)
+  }
+
   });
