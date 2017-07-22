@@ -55,6 +55,9 @@ $white: #fff;
 body {
     font-family: $bodyFont;
     font-size: 13px;
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .basis-auto {

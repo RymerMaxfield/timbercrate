@@ -1,5 +1,53 @@
+@mixin image($folderAndName, $size, $pos, $height, $width) {
+    background: url(../styles/images/#{$folderAndName}) no-repeat;
+    background-size: $size;
+    background-position: $pos;
+    height: $height;
+    width: $width;
+}
 
+@mixin textProps($size, $family, $weight, $color) {
+    font-size: $size;
+    font-family: $family;
+    font-weight: $weight;
+    color: $color;
+}
 
+.carousel-item:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .4);
+    }
+
+.carousel-picture-1 {
+    @include image("carousel-product.jpg", cover, center center, calc(85vh - 125px), 100%);
+}
+
+.carousel-picture-2 {
+    @include image("carousel-about.jpg", cover, center center, calc(85vh - 125px), 100%);
+}
+
+.carousel-picture-3 {
+    @include image("carousel-contact.jpg", cover, center center, calc(85vh - 125px), 100%);
+}
+
+.carousel-control-prev {
+    width: 50px;
+    @media (min-width: 768px) {
+        width: 100px;
+    }
+}
+
+.carousel-control-next {
+    width: 50px;
+    @media (min-width: 768px) {
+        width: 100px;
+    }
+}
 
 @media (min-width: 576px) {
 

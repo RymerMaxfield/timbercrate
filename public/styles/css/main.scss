@@ -3,9 +3,24 @@
 @import 'variables.scss';
 @import 'home.scss';
 
+@mixin image($folderAndName, $size, $pos, $height, $width) {
+    background: url(../styles/images/#{$folderAndName}) no-repeat;
+    background-size: $size;
+    background-position: $pos;
+    height: $height;
+    width: $width;
+}
+
+@mixin textProps($size, $family, $weight, $color) {
+    font-size: $size;
+    font-family: $family;
+    font-weight: $weight;
+    color: $color;
+}
+
 .nav-bar {
-    height: 125px;
-    box-shadow: 0px 1px 10px #8d8d8d;
+  height: 125px;
+  box-shadow: 0px 1px 10px #8d8d8d;
 }
 
 .company-logo {
@@ -15,30 +30,39 @@
 
 .navbar-link {
   cursor: pointer;
-  font-size: 20px;
+  @include textProps(20px, $bodyFont, 500, #624734);
   text-transform: capitalize;
+  transition: transform .1s;
+  position: relative;
 }
 
-@media (min-width: 576px) {
-
-
-
+.navbar-link:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  background: rgb(38, 187, 85);
+  height: 2px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
 }
 
-@media (min-width: 768px) {
-
-
-
+.navbar-link:hover:before,
+.navbar-link:focus:before {
+  left: 0;
+  right: 0;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 576px) {}
 
+@media (min-width: 768px) {}
 
+@media (min-width: 992px) {}
 
-}
-
-@media (min-width: 1200px) {
-
-
-
-}
+@media (min-width: 1200px) {}
