@@ -13,22 +13,22 @@
     color: $color;
 }
 
-.carousel-item:after {
+.carousel-item:before {
         content: "";
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, .4);
+        background: rgba(255, 255, 255, 0.5);
     }
 
 .carousel-picture-1 {
-    @include image("carousel-product.jpg", cover, center center, calc(85vh - 125px), 100%);
+    @include image("c-4.jpg", cover, center center, calc(85vh - 125px), 100%);
 }
 
 .carousel-picture-2 {
-    @include image("carousel-about.jpg", cover, center center, calc(85vh - 125px), 100%);
+    @include image("c-3.jpg", cover, center center, calc(85vh - 125px), 100%);
 }
 
 .carousel-picture-3 {
@@ -47,6 +47,36 @@
     @media (min-width: 768px) {
         width: 100px;
     }
+}
+
+.slide-sub-header {
+    @include textProps(30px, $bodyFont, 600, #313131);
+    text-transform: capitalize;
+    z-index: 10;
+}
+
+.slide-header {
+    @include textProps(75px, $bodyFont, 600, #313131);
+    text-transform: uppercase;
+    z-index: 10;
+}
+
+.products-btn {
+    padding: 10px 20px;
+    background-color: rgba(38, 187, 85, 0.77);
+    color: white;
+    z-index: 10;
+    cursor: pointer;
+    font-size: 25px;
+    margin-bottom: 160px;
+}
+
+.featured-items {
+    text-align: center;
+    padding-top: 25px;
+    @include textProps(26px, $bodyFont, bold, #313131);
+    text-decoration: underline;
+    text-transform: capitalize;
 }
 
 @media (min-width: 576px) {
