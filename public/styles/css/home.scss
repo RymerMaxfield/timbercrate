@@ -14,14 +14,14 @@
 }
 
 .carousel-item:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.5);
-    }
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5);
+}
 
 .carousel-picture-1 {
     @include image("c-4.jpg", cover, center center, calc(85vh - 125px), 100%);
@@ -74,31 +74,49 @@
 .featured-items {
     text-align: center;
     padding-top: 25px;
-    @include textProps(26px, $bodyFont, bold, #313131);
+    padding-bottom: 25px;
+    @include textProps(40px, $bodyFont, bold, #313131);
     text-decoration: underline;
     text-transform: capitalize;
 }
 
-@media (min-width: 576px) {
-
-
-
+.testimonial-wrapper {
+    @include image("woodwork.jpg", cover, center center, null, 100%);
+    min-height: 600px;
+    position: relative;
 }
 
-@media (min-width: 768px) {
-
-
-
+.testimonial-wrapper:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
 }
 
-@media (min-width: 992px) {
-
-
-
+.testimonial-header {
+    @include textProps(40px, $headerFont, bold, $white);
+    display: inline-block;
+    text-transform: capitalize;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-decoration: underline;
 }
 
-@media (min-width: 1200px) {
+.testimonial-container {
+    background-color: $white;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 8px black;
+    border-radius: 5px;
+}
 
+.testimonial-logo {
+    max-width: 225px;
+}
 
-
+.testimonial-text {
+    @include textProps(16px, $bodyFont, normal, null);
 }
