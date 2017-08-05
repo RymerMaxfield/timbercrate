@@ -118,11 +118,19 @@
     @include textProps(16px, $bodyFont, normal, null);
 }
 
+.contact-container {
+    background: rgb(189, 234, 204);
+}
+
 .contact-us-header {
     @include textProps(40px, $headerFont, bold, #624734);
     display: inline-block;
     text-transform: capitalize;
     text-align: center;
+}
+
+.contact-form {
+    background-color: $white;
 }
 
 .about-us-header {
@@ -139,13 +147,17 @@
 }
 
 .input-field {
-    border: 1px solid #353535;
+    border: 1px solid #d2d2d2;
     font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 300;
     height: 50px;
     padding: 0 15px;
     width: 100%;
+}
+
+.input-field:focus {
+    outline-color: green;
 }
 
 .label-text {
@@ -154,7 +166,7 @@
 }
 
 .textarea-field {
-    border: 1px solid #353535;
+    border: 1px solid #d2d2d2;
     font-family: 'Montserrat', sans-serif;
     font-size: 13px;
     font-weight: 300;
@@ -163,9 +175,12 @@
     width: 100%;
 }
 
+.textarea-field:focus {
+    outline-color: green;
+}
+
 .send-msg-btn {
     background-color: rgb(38, 187, 85);
-    border-radius: 10px;
     border: none;
     color: #fff;
     font-family: 'Montserrat', sans-serif;
