@@ -75,8 +75,7 @@
     text-align: center;
     padding-top: 25px;
     padding-bottom: 25px;
-    @include textProps(40px, $bodyFont, bold, #313131);
-    text-decoration: underline;
+    @include textProps(40px, $headerFont, bold, #624734);
     text-transform: capitalize;
 }
 
@@ -102,15 +101,13 @@
     text-transform: capitalize;
     padding-top: 25px;
     padding-bottom: 25px;
-    text-decoration: underline;
 }
 
 .testimonial-container {
     background-color: $white;
     height: 100%;
     width: 100%;
-    box-shadow: 0 0 8px black;
-    border-radius: 5px;
+    box-shadow: 0 0 16px 1px #000000;
 }
 
 .testimonial-logo {
@@ -119,4 +116,62 @@
 
 .testimonial-text {
     @include textProps(16px, $bodyFont, normal, null);
+}
+
+.contact-us-header {
+    @include textProps(40px, $headerFont, bold, #624734);
+    display: inline-block;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.about-us-header {
+    @include textProps(20px, $bodyFont, bold, #353535);
+}
+
+.contact-type {
+    @include textProps(null, $bodyFont, 500, green);
+}
+
+.form-header {
+    @include textProps(20px, $bodyFont, 500, null);
+    text-transform: capitalize;
+}
+
+.input-field {
+    border: 1px solid #353535;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    height: 50px;
+    padding: 0 15px;
+    width: 100%;
+}
+
+.label-text {
+    @include textProps(20px, $bodyFont, 500, #353535);
+    
+}
+
+.textarea-field {
+    border: 1px solid #353535;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    height: 160px;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+.send-msg-btn {
+    background-color: rgb(38, 187, 85);
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    outline: none;
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
