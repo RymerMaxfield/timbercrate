@@ -1,6 +1,7 @@
 angular.module('timbercrate')
   .controller('contactCtrl', function($scope, mainService) {
-let clicked = 0;
+
+    let clicked = 0;
     $scope.sendMail = function(mail) {
       clicked++;
       console.log('clicked', clicked);
@@ -8,6 +9,7 @@ let clicked = 0;
         .then(response => {
           console.log(response);
           $scope.messageSent = true;
+          $scope.mailObj = '';
         })
     }
 

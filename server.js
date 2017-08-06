@@ -45,6 +45,8 @@ massive({
     // ENDPOINTS \\
     // get all products
     APP.get( PUBLIC_ROUTE.GET , productCtrl.getAllProducts );
+    // get all featured products
+    APP.get( PUBLIC_ROUTE.GET_FEATURED , productCtrl.getFeatured );
     // get one product by id
     APP.get( PUBLIC_ROUTE.GETID, productCtrl.getProductById );
 

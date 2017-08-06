@@ -32,28 +32,34 @@
       <span class="col-12 featured-items">Featured Items</span>
     </div>
     <div class="row">
+      <!--TODO: This styling needs to be fixed for ng-repeat to work.-->
+      <!--<div class="row" ng-repeat="prod in featured">-->
+      <!--<div class="d-flex flex-column align-items-center justify-content-end col-md-4 col-sm-2 mt-3">-->
+        <!--<img ng-src="{{ prod.image_url }}" alt="featured crate number 1" class="img-fluid">-->
+        <!--<span class="img-description">{{ prod.description }}</span>-->
+      <!--</div>-->
       <div class="d-flex flex-column align-items-center justify-content-end col-md-4 col-sm-2 mt-3">
-        <img src="./styles/images/c-16.jpg" alt="featured crate number 1" class="img-fluid">
+        <img ng-src="./styles/images/T-16.jpg" alt="featured crate number 1" class="img-fluid">
         <span class="img-description">Box with some stuff!</span>
       </div>
       <div class="d-flex flex-column align-items-center justify-content-end col-md-4 col-sm-2 mt-3">
-        <img src="./styles/images/c-1.jpg" alt="featured crate package 2" class="img-fluid">
+        <img src="./styles/images/T-1.jpg" alt="featured crate package 2" class="img-fluid">
         <span class="img-description">Box with some stuff!</span>
       </div>
       <div class="d-flex flex-column align-items-center justify-content-end col-md-4 col-sm-2 mt-3">
-        <img src="./styles/images/c-14.jpg" alt="featured crate package 3" class="img-fluid">
+        <img src="./styles/images/T-14.jpg" alt="featured crate package 3" class="img-fluid">
         <span class="img-description">Box with some stuff!</span>
       </div>
       <div class="d-flex flex-column align-items-center justify-content-end col-md-4 col-sm-2 mt-3">
-        <img src="./styles/images/c-12.jpg" alt="featured crate package 4" class="img-fluid">
+        <img src="./styles/images/T-12.jpg" alt="featured crate package 4" class="img-fluid">
         <span class="img-description">Box with some stuff!</span>
       </div>
       <div class="d-flex flex-column align-items-center justify-content-end col-md-4 col-sm-2 mt-3">
-        <img src="./styles/images/c-2.jpg" alt="featured crate package 4" class="img-fluid">
+        <img src="./styles/images/T-2.jpg" alt="featured crate package 4" class="img-fluid">
         <span class="img-description">Box with some stuff!</span>
       </div>
       <div class="d-flex flex-column align-items-center justify-content-end col-md-4 col-sm-2 mt-3">
-        <img src="./styles/images/c-3.jpg" alt="featured crate package 4" class="img-fluid">
+        <img src="./styles/images/T-3.jpg" alt="featured crate package 4" class="img-fluid">
         <span class="img-description">Box with some stuff!</span>
       </div>
     </div>
@@ -120,27 +126,33 @@
           </div>
         </div>
       </div>
-      <div class="col-md-7 col-lg-8 py-3 contact-form">
-        <form action="#" class="row">
+      <div class="col-md-7 col-lg-8 py-3 contact-form" ng-controller="contactCtrl">
+        <form class="row" ng-submit="sendMail(mailObj)">
           <span class="col-12 form-header pb-2">Need an estimate or Have questions?</span>
           <p class="col-12 mb-3">If you would like to receive an estimate for our products, please do not hestitate to contact us for more information! We are standing by to answer all questions you may have.</p>
           <div class="col-lg-6 d-flex flex-column">
             <label for="fName" class="label-text">Name</label>
-            <input id="fName" required type="text" class="input-field">
+            <input id="fName" required type="text" class="input-field" ng-model="mailObj.name">
           </div>
           <div class="col-lg-6 d-flex flex-column">
             <label for="userEmail" class="label-text">Email</label>
-            <input id="userEmail" required type="email" class="input-field">
+            <input id="userEmail" required type="email" class="input-field" ng-model="mailObj.email">
           </div>
           <div class="col-12 d-flex flex-column  pt-3">
             <label for="userMessage" class="label-text">Message</label>
-            <textarea id="userMessage" required type="text" class="textarea-field"></textarea>
+            <textarea id="userMessage" required type="text" class="textarea-field" ng-model="mailObj.msg"></textarea>
           </div>
           <div class="col-12 pt-3">
             <button type="submit" class="send-msg-btn">Send Message</button>
           </div>
         </form>
+        <!--Uncomment div below for super crappy modal-->
+        <!--<div ng-if="messageSent" class="col-md-7 col-lg-8 py-3 message_success">-->
+          <!--<p>Message Success</p>-->
+        <!--</div>-->
       </div>
     </div>
   </div>
 </section>
+
+<!--<img ng-src="{{ featured[0].image_url }}" alt="">-->

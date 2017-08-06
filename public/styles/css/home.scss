@@ -24,11 +24,11 @@
 }
 
 .carousel-picture-1 {
-    @include image("c-4.jpg", cover, center center, calc(85vh - 125px), 100%);
+    @include image("T-4.jpg", cover, center center, calc(85vh - 125px), 100%);
 }
 
 .carousel-picture-2 {
-    @include image("c-3.jpg", cover, center center, calc(85vh - 125px), 100%);
+    @include image("T-3.jpg", cover, center center, calc(85vh - 125px), 100%);
 }
 
 .carousel-picture-3 {
@@ -189,4 +189,16 @@
     width: 100%;
     padding-top: 15px;
     padding-bottom: 15px;
+}
+
+
+.message_success {
+    background: crimson;
+    margin-top: 15px;
+    opacity: .7;
+    position: absolute;
+    right: 15%;
+    top: 25%;
+    width: 100%;
+    z-index: 15;
 }
