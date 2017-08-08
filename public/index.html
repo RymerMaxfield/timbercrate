@@ -22,15 +22,69 @@
           <img ui-sref="home" src="./styles/images/timbercrate-logo.png" alt="timber crate company" class="img-fluid company-logo">
         </div>
         <div class="col d-flex justify-content-end">
-          <span ui-sref="products" class="navbar-link mr-4 pr-1">Products</span>
-          <span class="navbar-link mr-4 pr-1">About Us</span>
-          <span class="navbar-link">Contact</span>
+          <span ui-sref="products" class="navbar-link hidden-sm-down mr-4 pr-1">Products</span>
+          <span class="navbar-link hidden-sm-down mr-4 pr-1">About Us</span>
+          <span class="navbar-link hidden-sm-down">Contact</span>
         </div>
       </div>
     </div>
   </nav>
 
   <ui-view></ui-view>
+
+  <section class="container-fluid max-width pt-4">
+  <div class="row legal-container justify-content-center py-4">
+    <div class="col-auto legal-link">
+      <a data-toggle="modal" data-target="#privModal">Privacy Policy</a>      
+    </div>
+    <div class="col-auto legal-link">
+      <a data-toggle="modal" data-target="#termsModal">Terms & Conditions</a> 
+    </div>
+  </div>
+</section>
+
+<div class="col-12 legal-info text-center">
+
+</div>
+<!-- Privacy Modal -->
+<div class="modal fade" id="privModal" tabindex="-1" role="dialog" aria-labelledby="privacyHeader" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="privacyHeader">Privacy</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!--Insert Privacy Information-->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Terms & Conditions Modal -->
+<div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="termsHeader" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="termsHeader">Terms &amp; Conditions</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!--Insert T&C Information-->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
