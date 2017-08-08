@@ -20,19 +20,15 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.3);
 }
 
 .carousel-picture-1 {
-    @include image("T-4.jpg", cover, center center, calc(85vh - 125px), 100%);
+    @include image("carousel-1.jpg", cover, center center, calc(85vh - 125px), 100%);
 }
 
 .carousel-picture-2 {
-    @include image("T-3.jpg", cover, center center, calc(85vh - 125px), 100%);
-}
-
-.carousel-picture-3 {
-    @include image("carousel-contact.jpg", cover, center center, calc(85vh - 125px), 100%);
+    @include image("carousel-2.jpg", cover, center center, calc(85vh - 125px), 100%);
 }
 
 .carousel-control-prev {
@@ -50,15 +46,21 @@
 }
 
 .slide-sub-header {
-    @include textProps(30px, $bodyFont, 600, #313131);
+    @include textProps(22px, $bodyFont, 500, #313131);
     text-transform: capitalize;
     z-index: 10;
+    @media (min-width: 768px) {
+        font-size: 30px;    
+    }
 }
 
 .slide-header {
-    @include textProps(75px, $bodyFont, 600, #313131);
+    @include textProps(28px, $bodyFont, 600, #313131);
     text-transform: uppercase;
     z-index: 10;
+    @media (min-width: 768px) {
+        font-size: 75px;    
+    }
 }
 
 .products-btn {
@@ -67,8 +69,28 @@
     color: white;
     z-index: 10;
     cursor: pointer;
-    font-size: 25px;
+    font-size: 16px;
+
+    @media (min-width: 576px) {
+        font-size: 25px;
     margin-bottom: 160px;
+        
+    }
+}
+
+.contact-btn {
+    padding: 10px 20px;
+    background-color: #624734;
+    color: white;
+    z-index: 10;
+    cursor: pointer;
+    font-size: 16px;
+
+    @media (min-width: 576px) {
+        font-size: 25px;
+    margin-bottom: 160px;
+        
+    }
 }
 
 .featured-items {
@@ -77,6 +99,15 @@
     padding-bottom: 25px;
     @include textProps(40px, $headerFont, bold, #624734);
     text-transform: capitalize;
+}
+
+.img-description {
+    @include textProps(18px, $bodyFont, bold, null);
+    text-transform: capitalize;
+}
+
+.img-details {
+    @include textProps(16px, $bodyFont, normal, null);
 }
 
 .testimonial-wrapper {
@@ -149,7 +180,7 @@
 .input-field {
     border: 1px solid #d2d2d2;
     font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 300;
     height: 50px;
     padding: 0 15px;
@@ -168,7 +199,7 @@
 .textarea-field {
     border: 1px solid #d2d2d2;
     font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
+    font-size: 18px;
     font-weight: 300;
     height: 160px;
     padding: 10px 15px;
