@@ -3,3 +3,4 @@ config.js
 all.css
 all.js
 serverAdminCtrl.js
+.DS_Store
