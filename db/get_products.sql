@@ -1,2 +1,2 @@
 SELECT * FROM products
-ORDER BY id;
+--ORDER BY pic_order;

@@ -142,6 +142,7 @@
 .img-description {
     @include textProps(18px, $bodyFont, bold, null);
     text-transform: capitalize;
+    white-space: nowrap;
 }
 
 .img-details {
@@ -270,4 +271,8 @@
     top: 25%;
     width: 100%;
     z-index: 15;
+}
+
+#increaseMargins {
+    //margin: 50px;
 }
