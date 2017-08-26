@@ -41,6 +41,7 @@
         <span class="img-details">{{ prod.details }}</span>
       </div>
     </div>
+    </div>
   </div>
 </section>
 <section class="testimonial-wrapper pb-5">
@@ -59,7 +60,7 @@
         <div class="testimonial-container d-flex flex-column justify-content-between align-items-left pt-3">
           <!-- <img src="./styles/images/company-logo-2.png" alt="timbercrate paypal testimonial" class="img-fluid testimonial-logo pt-3 px-3"> -->
           <p class="testimonial-text p-3">"Jake made a personal phone call to me to follow up and make sure we were satisfied with the crates. Great customer service. I would recommend them to anyone looking for something creative to give to a client."</p>
-          <span class="testimonial-signature">-Nate C.</span>          
+          <span class="testimonial-signature">-Nate C.</span>
         </div>
       </div>
       <div class="col-md-4 d-flex align-items-center">
@@ -117,6 +118,7 @@
             <label for="userEmail" class="label-text">Email</label>
             <input id="userEmail" required type="email" class="input-field" ng-model="mailObj.email">
           </div>
+          <div class="urlemail"><p>Don't fill this out!</p><label>URL</label><input type="url" ng-model="mailObj.url"/></div>
           <div class="col-12 d-flex flex-column  pt-3">
             <label for="userMessage" class="label-text">Message</label>
             <textarea id="userMessage" required type="text" class="textarea-field" ng-model="mailObj.msg"></textarea>

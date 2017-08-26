@@ -12,9 +12,4 @@ angular.module('timbercrate', ['ui.router']).config(function ($stateProvider, $u
             templateUrl: './views/products.html',
             controller: 'productCtrl'            
         })
-        .state('contact', {
-            url: '/contact',
-            templateUrl: './views/contact.html',
-            controller: 'contactCtrl'
-        })
 });
