@@ -13,15 +13,15 @@
 
 <body ng-controller="mainCtrl">
 <div ng-hide="userClicked" ng-click="closeImg()" id="fw-container" class="d-flex justify-content-center align-items-center">
-    <img ng-src="{{imgName}}" alt="" class="img-fluid w-75">
+    <img ng-src="{{imgName}}" alt="" class="img-fluid img-overlay">
 </div>
   <div ng-click="closeSidebar()" id="sidebar-overlay"></div>
   <nav id="nav-sidebar" class="d-flex flex-column">
       <i ng-click="closeSidebar()" class="fa fa-times ml-3 mt-3" aria-hidden="true"></i>
       <div class="d-flex flex-column pl-5 pt-5">
-          <span class="sidebar-link">Products</span>
-          <span class="sidebar-link">About Us</span>
-          <span class="sidebar-link">Contact</span>
+          <span ng-click="closeSidebar()" ui-sref="home" class="sidebar-link">Home</span>
+          <span ng-click="closeSidebar()" ui-sref="products" class="sidebar-link">Products</span>
+          <span ng-click="closeSidebar()" class="sidebar-link">Contact Us</span>
       </div>
   </nav>
   <nav ng-controller="mainCtrl" class="nav-bar">
@@ -33,9 +33,9 @@
         </div>
         <div class="col d-flex justify-content-end">
           <i ng-click="openSidebar()" class="fa fa-bars fa-3x hidden-md-up" aria-hidden="true"></i>
+          <span ui-sref="home" class="navbar-link hidden-sm-down mr-4 pr-1">Home</span>
           <span ui-sref="products" class="navbar-link hidden-sm-down mr-4 pr-1">Products</span>
-          <span class="navbar-link hidden-sm-down mr-4 pr-1">About Us</span>
-          <span class="navbar-link hidden-sm-down">Contact</span>
+          <span class="navbar-link hidden-sm-down">Contact Us</span>
         </div>
       </div>
     </div>
@@ -43,7 +43,7 @@
 
   <ui-view></ui-view>
 
-  <section class="container-fluid max-width pt-4">
+  <section class="container-fluid max-width py-4">
   <div class="row legal-container justify-content-center py-4">
     <div class="col-auto legal-link">
       <a data-toggle="modal" data-target="#privModal">Privacy Policy</a>      

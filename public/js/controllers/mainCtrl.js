@@ -25,11 +25,15 @@ angular.module('timbercrate')
 
     $scope.userClicked = false;
     $scope.enlargeImg = function (fileName) {
+      $("#fw-container").css("top", window.scrollY);
+      $("body").addClass("no-scroll");
+      console.log(window.scrollY);
       $scope.userClicked = false;
       $("#fw-container").addClass("full-width-img");
       $scope.imgName = fileName;
     }
     $scope.closeImg = function () {
+      $("body").removeClass("no-scroll");    
       $("#fw-container").removeClass("full-width-img");
       $scope.userClicked = true;
     }
