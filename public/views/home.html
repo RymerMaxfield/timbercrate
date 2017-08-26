@@ -14,7 +14,7 @@
         <div class="d-flex flex-column justify-content-center align-items-start pb-md-5 left-aligned-carousel">
           <span class="slide-header-left">Custom is our specialty</span>
           <span class="slide-sub-header-left">get your custom crate started</span>
-          <div ui-sref="products" class="contact-btn mt-2 mt-md-4">Contact Us</div>
+          <div ng-click="toContact()" class="contact-btn mt-2 mt-md-4">Contact Us</div>
         </div>
       </div>
     </div>
@@ -104,7 +104,7 @@
           </div>
         </div>
       </div> -->
-      <!-- <div class="px-3 d-flex justify-content-center"> -->
+      <div id="doContact" class="px-3 d-flex justify-content-center">
         
       <div class="col-md-9 col-lg-8 py-3 contact-form" ng-controller="contactCtrl">
         <form class="row" ng-submit="sendMail(mailObj)">
@@ -132,7 +132,7 @@
           <!--<p>Message Success</p>-->
         <!--</div>-->
       </div>
-    <!-- </div> -->
+    </div>
     
     </div>
   </div>
