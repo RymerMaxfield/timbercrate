@@ -1,16 +1,20 @@
 angular.module('timbercrate')
   .controller('contactCtrl', function($scope, mainService) {
 
-    let clicked = 0;
     $scope.sendMail = function(mail) {
-      clicked++;
-      console.log('clicked', clicked);
-      mainService.sendMail(mail)
-        .then(response => {
-          console.log(response);
-          $scope.messageSent = true;
-          $scope.mailObj = '';
-        })
+      if (!mail.url) {
+        mainService.sendMail(mail)
+          .then(res => {
+            mail.name = '';
+            mail.email = '';
+            mail.url = '';
+            mail.msg = '';
+          })
+
+      } else {
+        return null;
+        //do nothing
+      }
     }
 
   });

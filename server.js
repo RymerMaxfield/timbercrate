@@ -73,6 +73,6 @@ massive({
 
 APP.post(CONTACT_ROUTE, adminCtrl.sendMail);
 
-APP.listen(PORT, (a, b, c, d, e) => {
+APP.listen(PORT, () => {
   console.log(`Yo I'm on port ${PORT}`);
 });
