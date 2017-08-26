@@ -1,5 +1,7 @@
 angular.module('timbercrate')
   .controller('mainCtrl', function($scope, mainService) {
+    
+    $scope.userClicked = false;
 
     $scope.openSidebar = function() {
       console.log("clicked");
@@ -21,21 +23,23 @@ angular.module('timbercrate')
     mainService.getFeatured()
       .then(response => {
         $scope.featured = response;
+        console.log($scope.featured);
       })
 
-    $scope.userClicked = false;
     $scope.enlargeImg = function (fileName) {
+      $scope.userClicked = false;
+      $scope.imgName = fileName;
+      console.log($scope.userClicked);
       $("#fw-container").css("top", window.scrollY);
       $("body").addClass("no-scroll");
       console.log(window.scrollY);
-      $scope.userClicked = false;
       $("#fw-container").addClass("full-width-img");
-      $scope.imgName = fileName;
     }
     $scope.closeImg = function () {
       $("body").removeClass("no-scroll");    
       $("#fw-container").removeClass("full-width-img");
       $scope.userClicked = true;
+      console.log($scope.userClicked);      
     }
 
   });

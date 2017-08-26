@@ -6,7 +6,6 @@ angular.module('timbercrate', ['ui.router']).config(function ($stateProvider, $u
         .state('home', {
             url: '/',
             templateUrl: './views/home.html',
-            controller: 'mainCtrl'
         })
         .state('products', {
             url: '/products',

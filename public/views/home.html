@@ -35,12 +35,13 @@
     </div>
     <div class="row">
       <div ng-repeat="prod in featured" class="d-flex flex-column align-items-center justify-content-end col-md-4 mt-3">
-
-        <img ng-src="{{ prod.image_url }}" ng-click="enlargeImg(prod.image_url)" alt="featured crate number 1" class="img-fluid">
+        
+        <img ng-src="{{ prod.image_url }}" ng-click="enlargeImg(prod.image_url)" alt="featured crate number {{prod.id}}" class="img-fluid">
         <span class="img-description">{{ prod.description }}</span>
         <span class="img-details">{{ prod.details }}</span>
       </div>
-    </div> <!-- This div closes the .row-->
+    </div>
+    </div>
   </div>
 </section>
 <section class="testimonial-wrapper pb-5">
