@@ -186,6 +186,7 @@
 
 .testimonial-text {
     @include textProps(18px, $bodyFont, normal, null);
+    text-align: left;
     @media (min-width: 768px) {
         font-size: 20px;
     }
