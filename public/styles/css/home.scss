@@ -151,7 +151,7 @@
 
 .testimonial-wrapper {
     @include image("woodwork.jpg", cover, center center, null, 100%);
-    min-height: 600px;
+    min-height: 500px;
     position: relative;
 }
 
@@ -185,7 +185,16 @@
 }
 
 .testimonial-text {
-    @include textProps(16px, $bodyFont, normal, null);
+    @include textProps(18px, $bodyFont, normal, null);
+    @media (min-width: 768px) {
+        font-size: 20px;
+    }
+}
+
+.testimonial-signature {
+    @include textProps(24px, $bodyFont, bold, null);    
+    text-align: left;
+    padding: 0 20px 15px;
 }
 
 .contact-container {
@@ -193,10 +202,13 @@
 }
 
 .contact-us-header {
-    @include textProps(40px, $headerFont, bold, #624734);
+    @include textProps(30px, $headerFont, bold, #624734);
     display: inline-block;
     text-transform: capitalize;
     text-align: center;
+    @media (min-width: 768px) {
+        font-size: 40px;
+    }
 }
 
 .contact-form {
@@ -253,6 +265,7 @@
     background-color: rgb(38, 187, 85);
     border: none;
     color: #fff;
+    cursor: pointer;
     font-family: 'Montserrat', sans-serif;
     font-size: 22px;
     outline: none;
