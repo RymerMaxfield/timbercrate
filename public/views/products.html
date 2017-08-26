@@ -4,7 +4,7 @@
       <span class="col-12 featured-items">All Products</span>
     </div>
     <div class="row">
-      <div ng-repeat="prod in products" class="d-flex flex-column align-items-center justify-content-end col-md-4 col-sm-2 mt-3" id="increaseMargins">
+      <div ng-repeat="prod in products" class="d-flex flex-column align-items-center justify-content-end col-md-4 mt-3" id="increaseMargins">
         <img ng-src="{{ prod.image_url }}" ng-click="enlargeImg(prod.image_url)" alt="featured crate number {{prod.id}}" class="img-fluid">
         <span class="img-description">{{ prod.description }}</span>
         <span class="img-details"> {{ prod.details }} </span>
