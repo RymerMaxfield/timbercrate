@@ -6,11 +6,10 @@ const express = require('express'),
 const CONFIG = require('./config');
 
 const APP = module.exports = express(),
-      PORT = 3000,
+      PORT = 8080,
       productCtrl = require('./serverProductCtrl'),
       adminCtrl = require('./serverAdminCtrl'),
       PUBLIC_ROUTE = CONFIG.PUBLIC_ROUTES,
-      ADMIN_ROUTE = CONFIG.ADMIN_ROUTES,
       CONTACT_ROUTE = CONFIG.CONTACT_ROUTE;
 
 APP.use(bodyParser.json());
@@ -35,9 +34,6 @@ massive({
     /////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     db.init.create_products_table()
       .then(nothing => {
-        // db.run("SELECT * FROM products")
-        //   .then(response => console.log(response))
-        //   .catch(err => console.log(err));
         console.log('Products Table created')
       })
       .catch(err => console.log(err));
@@ -52,19 +48,19 @@ massive({
 
     // ADMIN ENDPOINTS
     // add a new product
-    APP.post( ADMIN_ROUTE.POST , adminCtrl.checkCreds , adminCtrl.addProduct );
+    // APP.post( ADMIN_ROUTE.POST , adminCtrl.checkCreds , adminCtrl.addProduct );
 
     // update product (by product id)
-    APP.put( ADMIN_ROUTE.PUT.ALL , adminCtrl.checkCreds , adminCtrl.update );
+    // APP.put( ADMIN_ROUTE.PUT.ALL , adminCtrl.checkCreds , adminCtrl.update );
 
     // update product category (by product id)
-    APP.put( ADMIN_ROUTE.PUT.CATEGORY , adminCtrl.checkCreds , adminCtrl.update );
+    // APP.put( ADMIN_ROUTE.PUT.CATEGORY , adminCtrl.checkCreds , adminCtrl.update );
 
     // update product image (by product id)
-    APP.put( ADMIN_ROUTE.PUT.IMAGE , adminCtrl.checkCreds , adminCtrl.update );
+    // APP.put( ADMIN_ROUTE.PUT.IMAGE , adminCtrl.checkCreds , adminCtrl.update );
 
     // delete product by id
-    APP.delete( ADMIN_ROUTE.DELETE , adminCtrl.checkCreds , adminCtrl.destroyProduct );
+    // APP.delete( ADMIN_ROUTE.DELETE , adminCtrl.checkCreds , adminCtrl.destroyProduct );
 
 });
 
@@ -74,5 +70,5 @@ massive({
 APP.post(CONTACT_ROUTE, adminCtrl.sendMail);
 
 APP.listen(PORT, () => {
-  console.log(`Yo I'm on port ${PORT}`);
+  console.log(`Listening`);
 });
