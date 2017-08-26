@@ -104,37 +104,29 @@
         </div>
       </div> -->
       <div id="doContact" class="px-3 d-flex justify-content-center">
-        
-      <div class="col-md-9 col-lg-8 py-3 contact-form" ng-controller="contactCtrl">
-        <form class="row" ng-submit="sendMail(mailObj)">
-          <span class="col-12 form-header pb-2">Need an estimate or Have questions?</span>
-          <p class="col-12 mb-3">If you would like to receive a quote, or have any questions about our products, we are here for you. Get started on your custom project today.</p>
-          <div class="col-lg-6 d-flex flex-column">
-            <label for="fName" class="label-text">Name</label>
-            <input id="fName" required type="text" class="input-field" ng-model="mailObj.name">
-          </div>
-          <div class="col-lg-6 d-flex flex-column">
-            <label for="userEmail" class="label-text">Email</label>
-            <input id="userEmail" required type="email" class="input-field" ng-model="mailObj.email">
-          </div>
-          <div class="urlemail"><p>Don't fill this out!</p><label>URL</label><input type="url" ng-model="mailObj.url"/></div>
-          <div class="col-12 d-flex flex-column  pt-3">
-            <label for="userMessage" class="label-text">Message</label>
-            <textarea id="userMessage" required type="text" class="textarea-field" ng-model="mailObj.msg"></textarea>
-          </div>
-          <div class="col-12 pt-3">
-            <button type="submit" class="send-msg-btn">Send Message</button>
-          </div>
-        </form>
-        <!--Uncomment div below for super crappy modal-->
-        <!--<div ng-if="messageSent" class="col-md-7 col-lg-8 py-3 message_success">-->
-          <!--<p>Message Success</p>-->
-        <!--</div>-->
-      </div>
+        <div class="col-md-9 col-lg-8 py-3 contact-form" ng-controller="contactCtrl">
+          <form class="row" ng-submit="sendMail(mailObj)">
+            <span class="col-12 form-header pb-2">Need an estimate or Have questions?</span>
+            <p class="col-12 mb-3">If you would like to receive a quote, or have any questions about our products, we are here for you. Get started on your custom project today.</p>
+            <div class="col-lg-6 d-flex flex-column">
+              <label for="fName" class="label-text">Name</label>
+              <input id="fName" required type="text" class="input-field" ng-model="mailObj.name">
+            </div>
+            <div class="col-lg-6 d-flex flex-column">
+              <label for="userEmail" class="label-text">Email</label>
+              <input id="userEmail" required type="email" class="input-field" ng-model="mailObj.email">
+            </div>
+            <div class="urlemail"><p>Don't fill this out!</p><label>URL</label><input type="url" ng-model="mailObj.url"/></div>
+            <div class="col-12 d-flex flex-column  pt-3">
+              <label for="userMessage" class="label-text">Message</label>
+              <textarea id="userMessage" required type="text" class="textarea-field" ng-model="mailObj.msg"></textarea>
+            </div>
+            <div class="col-12 pt-3">
+              <button type="submit" class="send-msg-btn">Send Message</button>
+            </div>
+          </form>
+        </div>
     </div>
-    
     </div>
   </div>
 </section>
-
-<!--<img ng-src="{{ featured[0].image_url }}" alt="">-->

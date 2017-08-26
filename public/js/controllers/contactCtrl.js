@@ -13,7 +13,6 @@ angular.module('timbercrate')
 
       } else {
         return null;
-        //do nothing
       }
     }
 
