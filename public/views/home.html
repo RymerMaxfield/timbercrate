@@ -40,41 +40,6 @@
         <span class="img-description">{{ prod.description }}</span>
         <span class="img-details">{{ prod.details }}</span>
       </div>
-      <!--<div class="d-flex flex-column align-items-center justify-content-end col-md-4 my-3">-->
-        <!--<img ng-src="./styles/images/T-16.jpg" alt="featured crate number 1" class="img-fluid mb-2">-->
-        <!--<span class="img-description">Box with some stuff!</span>-->
-        <!--<span class="img-details">6 x 6 x 12 Oak Wood</span>-->
-      <!--</div>-->
-      <!--<div class="d-flex flex-column align-items-center justify-content-end col-md-4 my-3">-->
-        <!--<img src="./styles/images/T-1.jpg" alt="featured crate package 2" class="img-fluid mb-2">-->
-        <!--<span class="img-description">Box with some stuff!</span>-->
-        <!--<span class="img-details">6 x 6 x 12 Oak Wood</span>-->
-        <!---->
-      <!--</div>-->
-      <!--<div class="d-flex flex-column align-items-center justify-content-end col-md-4 my-3">-->
-        <!--<img src="./styles/images/T-14.jpg" alt="featured crate package 3" class="img-fluid mb-2">-->
-        <!--<span class="img-description">Box with some stuff!</span>-->
-        <!--<span class="img-details">6 x 6 x 12 Oak Wood</span>-->
-        <!---->
-      <!--</div>-->
-      <!--<div class="d-flex flex-column align-items-center justify-content-end col-md-4 mt-3 mb-3 mb-md-0">-->
-        <!--<img src="./styles/images/T-12.jpg" alt="featured crate package 4" class="img-fluid mb-2">-->
-        <!--<span class="img-description">Box with some stuff!</span>-->
-        <!--<span class="img-details">6 x 6 x 12 Oak Wood</span>-->
-        <!---->
-      <!--</div>-->
-      <!--<div class="d-flex flex-column align-items-center justify-content-end col-md-4 mt-3 mb-3 mb-md-0">-->
-        <!--<img src="./styles/images/T-2.jpg" alt="featured crate package 4" class="img-fluid mb-2">-->
-        <!--<span class="img-description">Box with some stuff!</span>-->
-        <!--<span class="img-details">6 x 6 x 12 Oak Wood</span>-->
-        <!---->
-      <!--</div>-->
-      <!--<div class="d-flex flex-column align-items-center justify-content-end col-md-4 mt-3 mb-3 mb-md-0">-->
-        <!--<img src="./styles/images/T-3.jpg" alt="featured crate package 4" class="img-fluid mb-2">-->
-        <!--<span class="img-description">Box with some stuff!</span>-->
-        <!--<span class="img-details">6 x 6 x 12 Oak Wood</span>-->
-        <!---->
-      <!--</div>-->
     </div> <!-- This div closes the .row-->
   </div>
 </section>
@@ -94,7 +59,7 @@
         <div class="testimonial-container d-flex flex-column justify-content-between align-items-left pt-3">
           <!-- <img src="./styles/images/company-logo-2.png" alt="timbercrate paypal testimonial" class="img-fluid testimonial-logo pt-3 px-3"> -->
           <p class="testimonial-text p-3">"Jake made a personal phone call to me to follow up and make sure we were satisfied with the crates. Great customer service. I would recommend them to anyone looking for something creative to give to a client."</p>
-          <span class="testimonial-signature">-Nate C.</span>          
+          <span class="testimonial-signature">-Nate C.</span>
         </div>
       </div>
       <div class="col-md-4 d-flex align-items-center">
@@ -152,6 +117,7 @@
             <label for="userEmail" class="label-text">Email</label>
             <input id="userEmail" required type="email" class="input-field" ng-model="mailObj.email">
           </div>
+          <div class="urlemail"><p>Don't fill this out!</p><label>URL</label><input type="url" ng-model="mailObj.url"/></div>
           <div class="col-12 d-flex flex-column  pt-3">
             <label for="userMessage" class="label-text">Message</label>
             <textarea id="userMessage" required type="text" class="textarea-field" ng-model="mailObj.msg"></textarea>
