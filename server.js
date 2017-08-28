@@ -6,7 +6,6 @@ const express = require('express'),
 const CONFIG = require('./config');
 
 const APP = module.exports = express(),
-      PORT = 8080,
       productCtrl = require('./serverProductCtrl'),
       adminCtrl = require('./serverAdminCtrl'),
       PUBLIC_ROUTE = CONFIG.PUBLIC_ROUTES,
@@ -69,6 +68,6 @@ massive({
 
 APP.post(CONTACT_ROUTE, adminCtrl.sendMail);
 
-APP.listen(PORT, () => {
+APP.listen(CONFIG.PORT_PROD, () => {
   console.log(`Listening`);
 });
