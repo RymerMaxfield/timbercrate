@@ -15,10 +15,6 @@ APP.use(bodyParser.json());
 APP.use(cors(CONFIG.CORSOPTIONS));
 APP.use(express.static('./public'));
 
-APP.get('api/test', function(req,res) {
-  res.send('App is connected')
-});
-
 massive({
   host: CONFIG.DB.HOST,
   database: CONFIG.DB.DB,
@@ -33,7 +29,7 @@ massive({
     /////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     db.init.create_products_table()
       .then(nothing => {
-        console.log('Products Table created')
+        return nothing;
       })
       .catch(err => console.log(err));
 
@@ -68,6 +64,4 @@ massive({
 
 APP.post(CONTACT_ROUTE, adminCtrl.sendMail);
 
-APP.listen(process.env.EXPRESS_PORT || CONFIG.PORT, () => {
-  console.log(`Listening`);
-});
+APP.listen(process.env.EXPRESS_PORT || CONFIG.PORT);
