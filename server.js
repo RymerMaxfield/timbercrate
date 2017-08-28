@@ -68,6 +68,6 @@ massive({
 
 APP.post(CONTACT_ROUTE, adminCtrl.sendMail);
 
-APP.listen(CONFIG.PORT_PROD, () => {
+APP.listen(process.env.EXPRESS_PORT || CONFIG.PORT, () => {
   console.log(`Listening`);
 });
