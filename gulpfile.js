@@ -3,12 +3,14 @@ var plumber = require('gulp-plumber');
 var concat = require('gulp-concat');
 var sass = require('gulp-sass');
 var order = require('gulp-order');
+var babel = require('gulp-babel');
 gulp.task('js', function () {
     return gulp.src(['./public/*.js', './public/js/*.js', './public/js/**/*.js'])
         .pipe(plumber())
         .pipe(order([
         'app.js', '.js'
-    ]))
+        ]))
+        .pipe(babel({presets: ['es2015'] }))
         .pipe(concat('all.js'))
         .pipe(gulp.dest('public/dist'));
 });
