@@ -18,12 +18,17 @@
     color: $color;
 }
 
+.product-image {
+  cursor: pointer;
+}
+
 .fa-times {
   cursor: pointer;
 }
 
 #fw-container {
   position: absolute;
+  cursor: pointer;
 }
 
 .full-width-img {
