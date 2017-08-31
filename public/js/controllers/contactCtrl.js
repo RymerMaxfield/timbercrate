@@ -3,12 +3,12 @@ angular.module('timbercrate')
 
     $scope.sendMail = function(mail) {
       if (!mail.url) {
+        // console.log('sending... ...');
         mainService.sendMail(mail)
           .then(res => {
-            mail.name = '';
-            mail.email = '';
-            mail.url = '';
-            mail.msg = '';
+            for(let key in mail) mail[key] = '';
+            swal('Message Sent!');
+            // console.log(res)
           })
 
       } else {
