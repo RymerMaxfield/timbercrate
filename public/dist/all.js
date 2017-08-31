@@ -856,6 +856,7 @@ angular.module('timbercrate').controller('contactCtrl', function ($scope, mainSe
         mail.email = '';
         mail.url = '';
         mail.msg = '';
+        swal('Message Sent!');
       });
     } else {
       return null;

@@ -9,6 +9,7 @@ angular.module('timbercrate')
             mail.email = '';
             mail.url = '';
             mail.msg = '';
+            swal('Message Sent!')
           })
 
       } else {
