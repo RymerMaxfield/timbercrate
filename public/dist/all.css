@@ -7679,11 +7679,15 @@ h6 {
 .urlemail {
   display: none; }
 
+.product-image {
+  cursor: pointer; }
+
 .fa-times {
   cursor: pointer; }
 
 #fw-container {
-  position: absolute; }
+  position: absolute;
+  cursor: pointer; }
 
 .full-width-img {
   position: absolute;

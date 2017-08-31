@@ -35,7 +35,7 @@
     </div>
     <div class="row">
       <div ng-repeat="prod in featured" class="d-flex flex-column align-items-center justify-content-end col-md-4 mt-3">
-        <img ng-src="{{ prod.image_url }}" ng-click="enlargeImg(prod.image_url)" alt="featured crate number {{prod.id}}" class="img-fluid">
+        <img ng-src="{{ prod.image_url }}" ng-click="enlargeImg(prod.image_url)" alt="featured crate number {{prod.id}}" class="img-fluid product-img">
         <span class="img-description">{{ prod.description }}</span>
         <span class="img-details">{{ prod.details }}</span>
       </div>
@@ -115,6 +115,10 @@
             <div class="col-lg-6 d-flex flex-column">
               <label for="userEmail" class="label-text">Email</label>
               <input id="userEmail" required type="email" class="input-field" ng-model="mailObj.email">
+            </div>
+            <div class="col-12 d-flex flex-column">
+              <label for="userPhone" class="label-text">Phone (Optional)</label>
+              <input id="userPhone" type="text" class="input-field" ng-model="mailObj.phone" mask="(999) 999-9999" clean="true">
             </div>
             <div class="urlemail"><p>Don't fill this out!</p><label>URL</label><input type="url" ng-model="mailObj.url"/></div>
             <div class="col-12 d-flex flex-column  pt-3">

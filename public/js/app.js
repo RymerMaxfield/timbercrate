@@ -1,4 +1,4 @@
-angular.module('timbercrate', ['ui.router']).config(function ($stateProvider, $urlRouterProvider) {
+angular.module('timbercrate', ['ui.router', 'ngMask']).config(function ($stateProvider, $urlRouterProvider) {
     
     $urlRouterProvider.otherwise("/");
 
